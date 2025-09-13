@@ -18,12 +18,12 @@ public class Animal {
     private LocalDate fecha_ultima_vacuna;
     
     //constructor
-    public Animal(String nombre, int peso, String propietario, LocalDate fecha_cumpleaños, LocalDate fecha_ultima_vacuna){
-        this.nombre = nombre;
+    public Animal(String nom, int peso, String pro, LocalDate fc, LocalDate fuv){
+        this.nombre = nom;
         this.peso = peso;
-        this.propietario = propietario;
-        this.fecha_cumpleaños = fecha_cumpleaños;
-        this.fecha_ultima_vacuna = fecha_ultima_vacuna;
+        this.propietario = pro;
+        this.fecha_cumpleaños = fc;
+        this.fecha_ultima_vacuna = fuv;
     }
 
     /**
@@ -97,3 +97,4 @@ public class Animal {
     }
     
 }
+

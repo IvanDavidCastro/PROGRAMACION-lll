@@ -1,0 +1,20 @@
+# fly.io sample configuration
+app = "tecnar-springboot-app"
+
+[build]
+  image = "tecnar-springboot:latest"
+
+[env]
+  PORT = "8080"
+
+[[services]]
+  internal_port = 8080
+  protocol = "tcp"
+  [services.concurrency]
+    hard_limit = 25
+    soft_limit = 20
+  [[services.ports]]
+    handlers = ["http"]
+    port = 80
+  [[services.ports]]
+    port = 443

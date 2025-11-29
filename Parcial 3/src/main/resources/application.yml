@@ -1,0 +1,28 @@
+spring:
+  main:
+    allow-bean-definition-overriding: true
+
+---
+spring:
+  profiles: supabase
+  datasource:
+    url: ${JDBC_DATABASE_URL:jdbc:postgresql://localhost:5432/tecnar}
+    username: ${DB_USER:postgres}
+    password: ${DB_PASS:postgres}
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+---
+spring:
+  profiles: mongodb
+  spring:
+    data:
+      mongodb:
+        uri: ${MONGODB_URI:mongodb://localhost:27017/tecnar}
+
+---
+spring:
+  profiles: firebase
+  # For firebase you'll need to provide a path to service account JSON via environment variable GOOGLE_APPLICATION_CREDENTIALS
